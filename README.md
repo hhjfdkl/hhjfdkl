@@ -16,3 +16,9 @@ Here are some ideas to get you started:
 -->
 Hello, I am a new software developer using Git as part of my classes. 
 I'm currently testing this, as I've never used Git before.
+
+<div>
+    <section>
+    </section>
+    <aside></aside>
+    </div>
