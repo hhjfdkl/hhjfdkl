@@ -1,14 +1,14 @@
 Variable:Something used for storing data for manipulation and usage later in a program:int x; String y; double[] z;
 Comment:Something that the compiler ignores, used for developers to leave human-readable messages:// or /* */
-Primitive data type:Something that consumes a fixed amount of memory. It's used to store simple values:42, true, 'a'
+Primitive data type:Something that consumes a fixed amount of memory:42, true, 'a'
 Reference data type:Something that stores complex data, and so it can consume a variable amount of memory:String, object, class, array
 Constant:Similar to a variable, but its value cannot be changed. In Java, the compiler is notified by declaring it 'final':final double CA_SALES_TAX_RATE = 7.25;
 Magic number:A number used in code that doesn't have a syntactically clear meaning - this should be replaced with a constant to communicate purpose:total=(17.20*26*80-75-26)*0.77*0.80;
-Widening:Converting a smaller data type to a larger data type:Converting int to long, or a byte to int
-Narrowing:Converting a larger data type to a smaller data type:Converting long to int, or int to byte
-Overflow:A datatype "rolling over" to the minimum value due to a conversion:I converted an int 132 to a byte and got -124
-Truncation:A loss of value due to converting decimals, such as converting a double to an integer:I converted a double 1.135 to an int and got 1
-Type Coercion:The process of automatic or implicit conversion of values from one data type to another:int x = 1; String y = "Helloworld! I am a useless program!! " + x; (This causes x to be come part of the string)
-Literal suffix:Something used to avoid compiler errors due to default data types. For instance, you may use this to change a number without a decimal to a long rather than in int:normalTemp = 98.6F; populationIn2020 = 7800000000L;
+Widen:Converting a smaller data type to a larger data type:Converting int to long, or a byte to int
+Narrow:Converting a larger data type to a smaller data type:Converting long to int, or int to byte
+Overflow:A datatype "rolling over" to the minimum value due to a conversion:A conversion an int 132 to a byte and getting -124
+Truncation:A loss of value due to converting decimals, such as converting a double to an integer:A conversion of a double 1.135 to an int and getting 1
+Type Coercion:The process of automatic or implicit conversion of values from one data type to another:int x = 1; String y = "Hello world! I am a useless program!! " + x; (This causes x to become part of the string)
+Literal suffix:Something used to avoid compiler errors due to default data types. For instance, you may use this to change a number without a decimal to a long rather than an int:normalTemp = 98.6F; populationIn2020 = 7800000000L;
 Expression:A combination of literals, variables, operators, and function calls that produce a single value when evaluated:double x = 200/650;
 Method:A section of code defined within object classes that break up programs into small, repeatable units of code. These are actions a class's objects can perform:public class Test { public void helloWorld(){ System.out.println("Hello world! I am a useless program!"); } }

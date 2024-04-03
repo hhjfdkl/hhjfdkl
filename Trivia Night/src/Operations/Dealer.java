@@ -18,6 +18,7 @@ public class Dealer implements HasDice
 
     private final Map<DeckType,Deck> decks = new HashMap<>();      //map used to hold multiple decks, key is the enum of the deck
     private final FileReader printer = new FileReader();
+    private final int SIX_SIDED_DIE = 6;    //constant used for the overridden dealer roll method
 
     public Deck getQuestionsDeck()
     {
@@ -68,7 +69,7 @@ public class Dealer implements HasDice
             Flashcard wrongAnswer2 = null;
             Flashcard wrongAnswer3 = null;
             AnswerType answerType;
-            switch(roll())          //overloaded roll method to get a random question type enum
+            switch(getCardType())          //using roll method to get a random question type enum
             {
                 case TYPE_IN:       //puts a new type-in question which has the answer as the term and prompt as the definition
                     qDeck.put(new TypeIn(answerCard.revealTerm().toLowerCase(), answerCard.revealDefinition()));
@@ -111,12 +112,18 @@ public class Dealer implements HasDice
     }
 
 
-    private CardType roll()
+    @Override
+    public int roll(int max)
     {
-        int roll = roll(7);
+        return new Random().nextInt(max);
+    }
+
+    private CardType getCardType()
+    {
+        int roll = roll(SIX_SIDED_DIE);
         if(roll==5)
             return CardType.TYPE_IN;
-        if(roll>=3)
+        if(roll==4)
             return CardType.TRUE_OR_FALSE;
         return CardType.QUIZ;
     }
@@ -124,7 +131,7 @@ public class Dealer implements HasDice
 //picks answer type
     private AnswerType getAnswerType()
     {
-        int roll = roll(7);
+        int roll = roll(SIX_SIDED_DIE);
         if (roll==5)
             return AnswerType.EXAMPLE;
         if(roll>=3)
@@ -145,7 +152,7 @@ public class Dealer implements HasDice
 //true or false specific
     private boolean answerIsTrue()
     {
-        return roll(7) > 2;
+        return roll(SIX_SIDED_DIE) > 2;
     }
     private String getPrompt(AnswerType answerType, Flashcard cardForPrompt)
     {

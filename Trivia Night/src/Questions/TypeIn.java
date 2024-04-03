@@ -8,7 +8,8 @@ public class TypeIn extends Question
 
     public TypeIn(String correctAnswer, String prompt)
     {
-        super(correctAnswer, "What is " + prompt + "?");
+        super(correctAnswer, "What is " + prompt.substring(0,1).toLowerCase() +
+                prompt.substring(1) + "?");
 
     }
 }

@@ -7,7 +7,7 @@ package Questions;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Quiz extends Question
+public class Quiz  extends Question
 {
     private final String a;
     private final String b;
@@ -34,7 +34,8 @@ public class Quiz extends Question
 
     public Quiz(String correctAnswer, String prompt, String answer1, String answer2, String answer3, String answer4)
     {
-        super(correctAnswer, "What is " + prompt + "?");
+        super(correctAnswer, "What is " + prompt.substring(0,1).toLowerCase() +
+                prompt.substring(1) + "?");
 
         this.a = answer1;
         this.b = answer2;
