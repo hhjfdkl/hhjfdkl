@@ -5,6 +5,7 @@ package Questions;
     Then three other terms/definitions are taken from the deck and assigned to the wrong answers.
  */
 
+import Operations.CardType;
 import org.jetbrains.annotations.NotNull;
 
 public class Quiz  extends Question
@@ -41,6 +42,12 @@ public class Quiz  extends Question
         this.b = answer2;
         this.c = answer3;
         this.d = answer4;
+    }
+
+    @Override
+    public CardType getCardType()
+    {
+        return CardType.QUIZ;
     }
 
 }

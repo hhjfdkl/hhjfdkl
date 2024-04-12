@@ -179,7 +179,7 @@ public class UI
 
     public void getQuestion(Card card)
     {
-        switch(secretary.checkCard(card))
+        switch(card.getCardType())
         {
             case FLASHCARD:
                 flashcardDisplay((Flashcard)card);

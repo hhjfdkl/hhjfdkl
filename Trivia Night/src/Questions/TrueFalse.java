@@ -1,4 +1,7 @@
 package Questions;
+
+import Operations.CardType;
+
 /*
     has a correct answer, sends a true or false option to the Operations.UI
  */
@@ -13,6 +16,11 @@ public class TrueFalse extends Question
         this.answer = trueOrFalse;
     }
 
+    @Override
+    public CardType getCardType()
+    {
+        return CardType.TRUE_OR_FALSE;
+    }
 
     public boolean check()
     {
