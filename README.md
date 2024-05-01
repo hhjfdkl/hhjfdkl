@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-Currently learning Python, and after I'll start working on my library project
+Currently learning Python
 
 <div>
     <section>
