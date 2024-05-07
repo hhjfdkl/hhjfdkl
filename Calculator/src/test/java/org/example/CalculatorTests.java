@@ -79,4 +79,12 @@ public class CalculatorTests
         Assert.assertEquals(expected, c.isAnagram(input1, input2));
     }
 
+
+    @Test
+    public void fun_with_exponents_test1()
+    {
+        c.funWithExponents(0,2,10);
+        System.out.println();
+        c.funWithExponents(5,3,5);
+    }
 }

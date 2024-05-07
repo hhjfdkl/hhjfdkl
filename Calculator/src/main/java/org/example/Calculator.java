@@ -14,42 +14,27 @@ public class Calculator
     private Calculator(){}
 
 
-    public int[] fibonacci(int iterations)
-    {
-        int[] result = new int[iterations];
 
-        for(int i = 0; i < result.length; i++)
-            result[i]=fib(i);
 
-        return result;
-    }
 
-    private int fib(int num)
+
+    public int fibonacci(int num)
     {
         if (num <=1)
             return num;
-        return fib(num-1) + fib(num - 2);
+        return fibonacci(num-1) + fibonacci(num - 2);
     }
 
-
-    public String[] fizzBuzz(int iterations)
+    public String fizzBuzz(int i)
     {
-        String[] result = new String[iterations];
-
-        for (int i = 1; i <= result.length; i++)
-        {
-            int index = i - 1; //starting value is 1
-            if(i%3==0 && i%5==0)
-                result[index] = "FizzBuzz";
-            else if(i%3==0)
-                result[index] = "Fizz";
-            else if(i%5==0)
-                result[index] = "Buzz";
-            else
-                result[index] = Integer.toString(i);
-        }
-
-        return result;
+        if(i%3==0 && i%5==0)
+            return "FizzBuzz";
+        else if(i%3==0)
+            return "Fizz";
+        else if(i%5==0)
+            return "Buzz";
+        else
+            return Integer.toString(i);
     }
 
     public int largestValue(int[] array)
@@ -97,10 +82,55 @@ public class Calculator
         Arrays.sort(cArr1);
         Arrays.sort(cArr2);
 
-        for(int i = 0; i < length1 ; i++)
-            if (cArr1[i] != cArr2[i])
-                return false;
-
-        return true;
+        return Arrays.equals(cArr1, cArr2);
     }
+
+    public boolean isEven(int number)
+    {
+        if (number == 0)
+            return false;
+        return number % 2 == 0;
+    }
+
+    //a is value 1, b is value 2, n is the cap on loops
+    //n will be at least 1 (we'll put a catch to make sure that's the case also at a later point)
+    public int funWithExponents(int val1, int val2, int loops)
+    {
+
+        //base calculation is (a + 2^0 * b)
+        //each iteration puts an additional ( + 2^n-1 * b) to the end
+        /*
+        for example, three iterations makes:
+        (a + 2^0 * b + 2^1 * b + 2^2 * b);
+         */
+        /*
+        it looks like there's a function within a function here, so it's:
+        f(a, b, n) = (a + loop[n](f2(b, n)))
+        f2(b, n) = (2^(n-1) * b)
+         */
+
+        int loopResult = 0;
+        for(int x = 0; x < loops; x++)
+        {
+            loopResult += funWithExponents2(val2, x);
+            System.out.print(loopResult+val1 + " ");
+        }
+
+        return loopResult + val1;
+
+
+    }
+        private int funWithExponents2(int val2, int power)
+        {
+            //exponent section
+            int p;  //placeholder for the loop
+            int x = 1;
+            final int CALC = 2;
+            for(p = power; p !=0; p--)
+                x = x * CALC;
+            //x is 2^(n-1) and val is b
+            return x * val2;
+        }
+
+
 }
