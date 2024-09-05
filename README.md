@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-<img alt="my stats" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hhjfdkl"/>
+<img alt="my stats" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hhjfdkl&langs_count=20&layout=compact"/>
 
 
 
