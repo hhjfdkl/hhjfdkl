@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=hhjfdkl)](https://github.com/hhfjdkl/github-readme-stats)
+<img alt="my stats" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hhjfdkl"/>
 
 
 
